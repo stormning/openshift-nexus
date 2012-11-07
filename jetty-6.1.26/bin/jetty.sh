@@ -447,6 +447,14 @@ then
 fi
 
 #####################################################
+# See if JETTY_HOST is defined
+#####################################################
+if [ "$JETTY_HOST" != "" ] 
+then
+  JAVA_OPTIONS="$JAVA_OPTIONS -Djetty.host=$JETTY_HOST"
+fi
+
+#####################################################
 # See if JETTY_LOGS is defined
 #####################################################
 if [ "$JETTY_LOGS" != "" ]
@@ -640,6 +648,7 @@ case "$ACTION" in
         echo "JETTY_CONF     =  $JETTY_CONF"
         echo "JETTY_RUN      =  $JETTY_RUN"
         echo "JETTY_PID      =  $JETTY_PID"
+        echo "JETTY_HOST     =  $JETTY_HOST"
         echo "JETTY_PORT     =  $JETTY_PORT"
         echo "JETTY_LOGS     =  $JETTY_LOGS"
         echo "CONFIGS        =  $CONFIGS"

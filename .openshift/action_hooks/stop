@@ -1,0 +1,5 @@
+#!/bin/bash
+# The logic to stop your application should be put in this script.
+
+source $(dirname $0)/jetty.env
+$JETTY_HOME/bin/jetty.sh stop

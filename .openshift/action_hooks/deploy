@@ -1,0 +1,13 @@
+#!/bin/bash
+# This deploy hook gets executed after dependencies are resolved and the
+# build hook has been run but before the application has been started back
+# up again.  This script gets executed directly, so it could be python, php,
+# ruby, etc.
+
+source $(dirname $0)/jetty.env
+
+if ! [ -d $PLEXUS_NEXUS_WORK ]; then
+    mkdir -p $PLEXUS_NEXUS_WORK
+fi
+
+ln -sf $OPENSHIFT_DIY_LOG_DIR $JETTY_HOME/logs
