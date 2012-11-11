@@ -29,11 +29,13 @@ detected.
   <Set name="copyWebDir">false</Set>
   <Set name="defaultsDescriptor"><SystemProperty name="jetty.home" default="."/>/etc/webdefault.xml</Set>
 
+  <!-- virtual hosts
   <Set name="virtualHosts">
     <Array type="String">
-      <Item>nexus.hongun.me</Item>
+      <Item>${your-app}-${your-domain}.rhcloud.com</Item>
     </Array>
   </Set>
+  -->
 
   <!-- disable cookies 
   <Get name="sessionHandler">
